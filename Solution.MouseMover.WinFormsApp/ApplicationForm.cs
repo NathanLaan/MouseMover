@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Microsoft.Win32;
 
 namespace Solution.MouseMover.WinFormsApp
 {
@@ -20,26 +21,38 @@ namespace Solution.MouseMover.WinFormsApp
 
     public ApplicationForm()
     {
-      this._mouseMoverEngine = new MouseMoverEngine();
-      InitializeComponent();
-      this._animationEventHandler = new System.EventHandler(this.AnimationEventHandler);
-      this._mouseMoveEventHandler = new System.EventHandler(this.MouseMoveEventHandler);
-      this.cbxAnimate.CheckedChanged += this._animationEventHandler;
-      this.mnuTrayAnimate.Click += this._animationEventHandler;
-      this.cbxMouseMove.CheckedChanged += this._mouseMoveEventHandler;
-      this.mnuTrayMouseMove.Click += this._mouseMoveEventHandler;
+        this._mouseMoverEngine = new MouseMoverEngine();
+        InitializeComponent();
+        this._animationEventHandler = new System.EventHandler(this.AnimationEventHandler);
+        this._mouseMoveEventHandler = new System.EventHandler(this.MouseMoveEventHandler);
+        this.cbxAnimate.CheckedChanged += this._animationEventHandler;
+        this.mnuTrayAnimate.Click += this._animationEventHandler;
+        this.cbxMouseMove.CheckedChanged += this._mouseMoveEventHandler;
+        this.mnuTrayMouseMove.Click += this._mouseMoveEventHandler;
+        SystemEvents.SessionEnding += new SessionEndingEventHandler(SystemEvents_SessionEnding);
+    } 
+
+    private void SystemEvents_SessionEnding(object sender, SessionEndingEventArgs e)
+    {
+        if (Environment.HasShutdownStarted)
+        {
+            //Tackle Shutdown
+        }
+        else
+        {
+            //Tackle log off
+        }
+        this.ApplicationExit();
     }
-
-
 
     private void ApplicationForm_FormClosing(object sender, FormClosingEventArgs e)
     {
-      if (!this._applicationExit)
-      {
-        this.Visible = false;
-        e.Cancel = true;
-        this.ShowBalloonTip();
-      }
+        if (!this._applicationExit)
+        {
+            this.Visible = false;
+            e.Cancel = true;
+            this.ShowBalloonTip();
+        }
     }
 
     private void ShowBalloonTip()
@@ -66,8 +79,17 @@ namespace Solution.MouseMover.WinFormsApp
 
     private void ApplicationExit()
     {
-      this._applicationExit = true;
-      Application.Exit();
+        this._applicationExit = true;
+        this.tmrMouseMove.Stop();
+        this.tmrMouseIcon.Stop();
+        try
+        {
+            this.systemTrayIcon.Dispose();
+        }
+        catch
+        {
+        }
+        Application.Exit();
     }
 
     private void mnuFileMinimize_Click(object sender, EventArgs e)
@@ -159,6 +181,16 @@ namespace Solution.MouseMover.WinFormsApp
         this.systemTrayIcon.Icon = Properties.Resources.MouseIcon05_01;
       }
       #endregion ANIMATION
+    }
+
+    private void mnuHelpAbout_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void mnuFileOptions_Click(object sender, EventArgs e)
+    {
+
     }
 
 

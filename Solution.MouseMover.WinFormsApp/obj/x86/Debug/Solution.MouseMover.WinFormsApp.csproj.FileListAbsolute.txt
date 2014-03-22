@@ -1,0 +1,10 @@
+E:\DEV\MouseMover\Solution.MouseMover.WinFormsApp\bin\Debug\MouseMover.exe.config
+Z:\DEV\MouseMover\Solution.MouseMover.WinFormsApp\bin\Debug\MouseMover.exe.config
+Z:\DEV\MouseMover\Solution.MouseMover.WinFormsApp\bin\Debug\MouseMover.exe
+Z:\DEV\MouseMover\Solution.MouseMover.WinFormsApp\bin\Debug\MouseMover.pdb
+Z:\DEV\MouseMover\Solution.MouseMover.WinFormsApp\obj\x86\Debug\Solution.MouseMover.WinFormsApp.ApplicationForm.resources
+Z:\DEV\MouseMover\Solution.MouseMover.WinFormsApp\obj\x86\Debug\Solution.MouseMover.WinFormsApp.Properties.Resources.resources
+Z:\DEV\MouseMover\Solution.MouseMover.WinFormsApp\obj\x86\Debug\Solution.MouseMover.WinFormsApp.csproj.GenerateResource.Cache
+Z:\DEV\MouseMover\Solution.MouseMover.WinFormsApp\obj\x86\Debug\MouseMover.exe
+Z:\DEV\MouseMover\Solution.MouseMover.WinFormsApp\obj\x86\Debug\MouseMover.pdb
+Z:\DEV\MouseMover\Solution.MouseMover.WinFormsApp\obj\x86\Debug\Solution.MouseMover.WinFormsApp.csprojResolveAssemblyReference.cache
