@@ -51,7 +51,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>AppMouseIcon05-01.ico</ApplicationIcon>
+    <ApplicationIcon>Icons\AppMouseIcon05-01.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -96,21 +96,21 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AppMouseIcon05-01.ico" />
-    <Content Include="MouseIcon05-01.ico" />
-    <Content Include="MouseIcon05-02.ico" />
-    <Content Include="MouseIcon05-03.ico" />
-    <Content Include="MouseIcon04-03.ico" />
-    <Content Include="MouseIcon04-02.ico" />
-    <Content Include="MouseIcon04-01.ico" />
-    <Content Include="MouseIconL03.ico" />
-    <Content Include="MouseIconR03.ico" />
-    <Content Include="MouseIconL02.ico" />
-    <Content Include="MouseIconR02.ico" />
-    <Content Include="MouseIconL01.ico" />
-    <Content Include="MouseIconR01.ico" />
-    <Content Include="MouseIconR.ico" />
-    <Content Include="MouseIconL.ico" />
+    <Content Include="Icons\AppMouseIcon05-01.ico" />
+    <Content Include="Icons\MouseIcon05-01.ico" />
+    <Content Include="Icons\MouseIcon05-02.ico" />
+    <Content Include="Icons\MouseIcon05-03.ico" />
+    <Content Include="Icons\MouseIcon04-03.ico" />
+    <Content Include="Icons\MouseIcon04-02.ico" />
+    <Content Include="Icons\MouseIcon04-01.ico" />
+    <Content Include="Icons\MouseIconL03.ico" />
+    <Content Include="Icons\MouseIconR03.ico" />
+    <Content Include="Icons\MouseIconL02.ico" />
+    <Content Include="Icons\MouseIconR02.ico" />
+    <Content Include="Icons\MouseIconL01.ico" />
+    <Content Include="Icons\MouseIconR01.ico" />
+    <Content Include="Icons\MouseIconR.ico" />
+    <Content Include="Icons\MouseIconL.ico" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
