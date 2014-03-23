@@ -203,11 +203,11 @@ namespace Solution.MouseMover.WinFormsApp
             {
                 if (startup)
                 {
-                    this.GetRegistryKey().SetValue("ApplicationName", Application.ExecutablePath);
+                    this.GetRegistryKey().SetValue(Application.ProductName, Application.ExecutablePath);
                 }
                 else
                 {
-                    this.GetRegistryKey().DeleteValue("ApplicationName");
+                    this.GetRegistryKey().DeleteValue(Application.ProductName);
                 }
                 return true;
             }
@@ -216,7 +216,7 @@ namespace Solution.MouseMover.WinFormsApp
                 return false;
             }
         }
-
+        
         private RegistryKey GetRegistryKey()
         {
             return Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
@@ -226,7 +226,8 @@ namespace Solution.MouseMover.WinFormsApp
         {
             try
             {
-                return bool.Parse(this.GetRegistryKey().GetValue("ApplicationName").ToString());
+                MessageBox.Show(this, "VAL: " + this.GetRegistryKey().GetValue(Application.ProductName).ToString());
+                return bool.Parse(this.GetRegistryKey().GetValue(Application.ProductName).ToString());
             }
             catch
             {
