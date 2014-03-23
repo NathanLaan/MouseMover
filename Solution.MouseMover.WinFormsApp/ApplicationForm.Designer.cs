@@ -40,15 +40,14 @@
         this.mnu = new System.Windows.Forms.MenuStrip();
         this.mnuFile = new System.Windows.Forms.ToolStripMenuItem();
         this.mnuFileMinimize = new System.Windows.Forms.ToolStripMenuItem();
-        this.mnuFileSeparator02 = new System.Windows.Forms.ToolStripSeparator();
+        this.mnuFileSeparator01 = new System.Windows.Forms.ToolStripSeparator();
         this.mnuFileExit = new System.Windows.Forms.ToolStripMenuItem();
+        this.mnuHelp = new System.Windows.Forms.ToolStripMenuItem();
+        this.mnuHelpAbout = new System.Windows.Forms.ToolStripMenuItem();
         this.cbxMouseMove = new System.Windows.Forms.CheckBox();
         this.tmrMouseIcon = new System.Windows.Forms.Timer(this.components);
         this.cbxAnimate = new System.Windows.Forms.CheckBox();
-        this.mnuHelp = new System.Windows.Forms.ToolStripMenuItem();
-        this.mnuHelpAbout = new System.Windows.Forms.ToolStripMenuItem();
-        this.mnuFileOptions = new System.Windows.Forms.ToolStripMenuItem();
-        this.mnuFileSeparator01 = new System.Windows.Forms.ToolStripSeparator();
+        this.chkWindowsStartup = new System.Windows.Forms.CheckBox();
         this.mnuTray.SuspendLayout();
         this.mnu.SuspendLayout();
         this.SuspendLayout();
@@ -121,8 +120,6 @@
         this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuFileMinimize,
             this.mnuFileSeparator01,
-            this.mnuFileOptions,
-            this.mnuFileSeparator02,
             this.mnuFileExit});
         this.mnuFile.Name = "mnuFile";
         this.mnuFile.Size = new System.Drawing.Size(37, 20);
@@ -135,10 +132,10 @@
         this.mnuFileMinimize.Text = "Minimize to System Tray";
         this.mnuFileMinimize.Click += new System.EventHandler(this.mnuFileMinimize_Click);
         // 
-        // mnuFileSeparator02
+        // mnuFileSeparator01
         // 
-        this.mnuFileSeparator02.Name = "mnuFileSeparator02";
-        this.mnuFileSeparator02.Size = new System.Drawing.Size(201, 6);
+        this.mnuFileSeparator01.Name = "mnuFileSeparator01";
+        this.mnuFileSeparator01.Size = new System.Drawing.Size(201, 6);
         // 
         // mnuFileExit
         // 
@@ -147,6 +144,21 @@
         this.mnuFileExit.Size = new System.Drawing.Size(204, 22);
         this.mnuFileExit.Text = "E&xit";
         this.mnuFileExit.Click += new System.EventHandler(this.mnuExit_Click);
+        // 
+        // mnuHelp
+        // 
+        this.mnuHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuHelpAbout});
+        this.mnuHelp.Name = "mnuHelp";
+        this.mnuHelp.Size = new System.Drawing.Size(44, 20);
+        this.mnuHelp.Text = "&Help";
+        // 
+        // mnuHelpAbout
+        // 
+        this.mnuHelpAbout.Name = "mnuHelpAbout";
+        this.mnuHelpAbout.Size = new System.Drawing.Size(107, 22);
+        this.mnuHelpAbout.Text = "&About";
+        this.mnuHelpAbout.Click += new System.EventHandler(this.mnuHelpAbout_Click);
         // 
         // cbxMouseMove
         // 
@@ -175,38 +187,23 @@
         this.cbxAnimate.Text = "Animate System Tray Icon";
         this.cbxAnimate.UseVisualStyleBackColor = true;
         // 
-        // mnuHelp
+        // chkWindowsStartup
         // 
-        this.mnuHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuHelpAbout});
-        this.mnuHelp.Name = "mnuHelp";
-        this.mnuHelp.Size = new System.Drawing.Size(44, 20);
-        this.mnuHelp.Text = "&Help";
-        // 
-        // mnuHelpAbout
-        // 
-        this.mnuHelpAbout.Name = "mnuHelpAbout";
-        this.mnuHelpAbout.Size = new System.Drawing.Size(152, 22);
-        this.mnuHelpAbout.Text = "&About";
-        this.mnuHelpAbout.Click += new System.EventHandler(this.mnuHelpAbout_Click);
-        // 
-        // mnuFileOptions
-        // 
-        this.mnuFileOptions.Name = "mnuFileOptions";
-        this.mnuFileOptions.Size = new System.Drawing.Size(204, 22);
-        this.mnuFileOptions.Text = "&Options";
-        this.mnuFileOptions.Click += new System.EventHandler(this.mnuFileOptions_Click);
-        // 
-        // mnuFileSeparator01
-        // 
-        this.mnuFileSeparator01.Name = "mnuFileSeparator01";
-        this.mnuFileSeparator01.Size = new System.Drawing.Size(201, 6);
+        this.chkWindowsStartup.AutoSize = true;
+        this.chkWindowsStartup.Location = new System.Drawing.Point(13, 74);
+        this.chkWindowsStartup.Name = "chkWindowsStartup";
+        this.chkWindowsStartup.Size = new System.Drawing.Size(102, 17);
+        this.chkWindowsStartup.TabIndex = 3;
+        this.chkWindowsStartup.Text = "Load on Startup";
+        this.chkWindowsStartup.UseVisualStyleBackColor = true;
+        this.chkWindowsStartup.CheckedChanged += new System.EventHandler(this.chkWindowsStartup_CheckedChanged);
         // 
         // ApplicationForm
         // 
         this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
         this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        this.ClientSize = new System.Drawing.Size(304, 82);
+        this.ClientSize = new System.Drawing.Size(304, 115);
+        this.Controls.Add(this.chkWindowsStartup);
         this.Controls.Add(this.cbxAnimate);
         this.Controls.Add(this.cbxMouseMove);
         this.Controls.Add(this.mnu);
@@ -243,11 +240,10 @@
     private System.Windows.Forms.ToolStripMenuItem mnuTrayAnimate;
     private System.Windows.Forms.ToolStripSeparator mnuTraySeparator01;
     private System.Windows.Forms.ToolStripMenuItem mnuFileMinimize;
-    private System.Windows.Forms.ToolStripSeparator mnuFileSeparator02;
     private System.Windows.Forms.ToolStripMenuItem mnuHelp;
     private System.Windows.Forms.ToolStripMenuItem mnuHelpAbout;
     private System.Windows.Forms.ToolStripSeparator mnuFileSeparator01;
-    private System.Windows.Forms.ToolStripMenuItem mnuFileOptions;
+    private System.Windows.Forms.CheckBox chkWindowsStartup;
 
 
   }
