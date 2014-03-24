@@ -7,6 +7,7 @@ namespace Solution.MouseMover.WinFormsApp
 {
     internal sealed unsafe class MouseMoverEngine
     {
+
         //
         //http://www.pinvoke.net/default.aspx/user32/sendinput.html
         //
@@ -21,6 +22,10 @@ namespace Solution.MouseMover.WinFormsApp
             public int time;
             public IntPtr dwExtraInfo;
         }
+
+        /// <summary>
+        /// Flags defining the mouse data event types.
+        /// </summary>
         [Flags]
         enum MouseDataFlags : uint
         {
@@ -33,6 +38,10 @@ namespace Solution.MouseMover.WinFormsApp
             /// </summary>
             XBUTTON2 = 0x0002
         }
+
+        /// <summary>
+        /// Flags defining possible mouse states.
+        /// </summary>
         [Flags]
         enum MouseEventFlags : uint
         {
@@ -87,6 +96,9 @@ namespace Solution.MouseMover.WinFormsApp
             MOUSEEVENTF_ABSOLUTE = 0x8000
         }
 
+        /// <summary>
+        /// Flags defining the possible mouse input data value types.
+        /// </summary>
         [StructLayout(LayoutKind.Sequential)]
         private struct MouseInputData
         {
@@ -121,12 +133,16 @@ namespace Solution.MouseMover.WinFormsApp
 
         [DllImport("user32.dll", SetLastError = true)]
         private static extern uint SendInput(uint nInputs, ref INPUT pInputs, int cbSize);
-        //private const int INPUT_MOUSE_EVENT = 0;
-        public const int INPUT_MOUSE_EVENT = 0;
-        public const int INPUT_KEYBOARD = 1;
-        public const int INPUT_HARDWARE = 2;
+
+
+        private const int INPUT_MOUSE_EVENT = 0;
+        private const int INPUT_KEYBOARD = 1;
+        private const int INPUT_HARDWARE = 2;
         private const int INPUT_MOUSE_EVENT_MOVE = 0x0001;
 
+        /// <summary>
+        /// Simulate moving the mouse cursor.
+        /// </summary>
         public void Move()
         {
             INPUT input = new INPUT();
