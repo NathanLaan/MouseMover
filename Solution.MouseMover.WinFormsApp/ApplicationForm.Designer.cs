@@ -111,7 +111,7 @@
             this.mnuHelp});
         this.mnu.Location = new System.Drawing.Point(0, 0);
         this.mnu.Name = "mnu";
-        this.mnu.Size = new System.Drawing.Size(304, 24);
+        this.mnu.Size = new System.Drawing.Size(314, 24);
         this.mnu.TabIndex = 0;
         this.mnu.Text = "menuStrip1";
         // 
@@ -180,7 +180,7 @@
         this.cbxAnimate.AutoSize = true;
         this.cbxAnimate.Checked = true;
         this.cbxAnimate.CheckState = System.Windows.Forms.CheckState.Checked;
-        this.cbxAnimate.Location = new System.Drawing.Point(13, 51);
+        this.cbxAnimate.Location = new System.Drawing.Point(12, 51);
         this.cbxAnimate.Name = "cbxAnimate";
         this.cbxAnimate.Size = new System.Drawing.Size(149, 17);
         this.cbxAnimate.TabIndex = 2;
@@ -190,11 +190,11 @@
         // chkWindowsStartup
         // 
         this.chkWindowsStartup.AutoSize = true;
-        this.chkWindowsStartup.Location = new System.Drawing.Point(13, 74);
+        this.chkWindowsStartup.Location = new System.Drawing.Point(12, 102);
         this.chkWindowsStartup.Name = "chkWindowsStartup";
-        this.chkWindowsStartup.Size = new System.Drawing.Size(102, 17);
+        this.chkWindowsStartup.Size = new System.Drawing.Size(188, 17);
         this.chkWindowsStartup.TabIndex = 3;
-        this.chkWindowsStartup.Text = "Load on Startup";
+        this.chkWindowsStartup.Text = "Run MouseMover when you log in";
         this.chkWindowsStartup.UseVisualStyleBackColor = true;
         this.chkWindowsStartup.CheckedChanged += new System.EventHandler(this.chkWindowsStartup_CheckedChanged);
         // 
@@ -202,7 +202,7 @@
         // 
         this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
         this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        this.ClientSize = new System.Drawing.Size(304, 115);
+        this.ClientSize = new System.Drawing.Size(314, 131);
         this.Controls.Add(this.chkWindowsStartup);
         this.Controls.Add(this.cbxAnimate);
         this.Controls.Add(this.cbxMouseMove);

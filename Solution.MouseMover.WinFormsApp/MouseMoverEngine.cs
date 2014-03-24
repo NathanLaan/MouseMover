@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 
 namespace Solution.MouseMover.WinFormsApp
 {
-    unsafe class MouseMoverEngine
+    internal sealed unsafe class MouseMoverEngine
     {
         //
         //http://www.pinvoke.net/default.aspx/user32/sendinput.html

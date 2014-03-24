@@ -30,7 +30,7 @@ namespace Solution.MouseMover.WinFormsApp
             this.cbxMouseMove.CheckedChanged += this._mouseMoveEventHandler;
             this.mnuTrayMouseMove.Click += this._mouseMoveEventHandler;
             SystemEvents.SessionEnding += new SessionEndingEventHandler(SystemEvents_SessionEnding);
-            this.chkWindowsStartup.Checked = this.IsLoadOnWindowsStartupEnabled();
+            this.chkWindowsStartup.Checked = this.IsRunOnWindowsStartupEnabled();
         }
 
         private void SystemEvents_SessionEnding(object sender, SessionEndingEventArgs e)
@@ -186,28 +186,45 @@ namespace Solution.MouseMover.WinFormsApp
 
         private void mnuHelpAbout_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show(this, Application.ProductName + " v" + Application.ProductVersion, "About");
         }
 
         private void chkWindowsStartup_CheckedChanged(object sender, EventArgs e)
         {
-            if (!SetLoadOnWindowsStartup(this.chkWindowsStartup.Checked))
+            if (!SetRunOnWindowsStartup(this.chkWindowsStartup.Checked))
             {
                 MessageBox.Show(this, "There was an error changing the Load on Startup option." );
             }
         }
 
-        private bool SetLoadOnWindowsStartup(bool startup)
+
+        #region Run on Windows Startup
+
+        /// <summary>
+        /// Shortcut function.
+        /// </summary>
+        /// <returns></returns>
+        private RegistryKey GetRunOnWindowsStartupRegistryKey()
+        {
+            return Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+        }
+
+        /// <summary>
+        /// Modify the Registry to set whether or not the application is set to run when Windows starts up.
+        /// </summary>
+        /// <param name="runOnStartup">Whether or not the application should run when Windows starts up.</param>
+        /// <returns>FALSE if the application could not be set to run on startup. Probably due to Registry access issue.</returns>
+        private bool SetRunOnWindowsStartup(bool runOnStartup)
         {
             try
             {
-                if (startup)
+                if (runOnStartup)
                 {
-                    this.GetRegistryKey().SetValue(Application.ProductName, Application.ExecutablePath);
+                    this.GetRunOnWindowsStartupRegistryKey().SetValue(Application.ProductName, Application.ExecutablePath);
                 }
                 else
                 {
-                    this.GetRegistryKey().DeleteValue(Application.ProductName);
+                    this.GetRunOnWindowsStartupRegistryKey().DeleteValue(Application.ProductName);
                 }
                 return true;
             }
@@ -216,24 +233,25 @@ namespace Solution.MouseMover.WinFormsApp
                 return false;
             }
         }
-        
-        private RegistryKey GetRegistryKey()
-        {
-            return Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
-        }
 
-        private bool IsLoadOnWindowsStartupEnabled()
+        /// <summary>
+        /// Check the Registry to confirm whether or not the application is set to run when Windows starts up.
+        /// </summary>
+        /// <returns>TRUE if MouseMover will run when Windows starts up.</returns>
+        private bool IsRunOnWindowsStartupEnabled()
         {
             try
             {
-                MessageBox.Show(this, "VAL: " + this.GetRegistryKey().GetValue(Application.ProductName).ToString());
-                return bool.Parse(this.GetRegistryKey().GetValue(Application.ProductName).ToString());
+                object val = this.GetRunOnWindowsStartupRegistryKey().GetValue(Application.ProductName);
+                return val != null && !string.IsNullOrEmpty(val.ToString());
             }
             catch
             {
                 return false;
             }
         }
+
+        #endregion
 
 
     }
