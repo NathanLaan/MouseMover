@@ -189,18 +189,6 @@ namespace Solution.MouseMover.WinFormsApp
 
         private void mnuHelpAbout_Click(object sender, EventArgs e)
         {
-            string copyright = "";
-            Assembly asm = Assembly.GetExecutingAssembly();
-            object[] obj = asm.GetCustomAttributes(false);
-            foreach (object o in obj)
-            {
-                if (o.GetType() == typeof(System.Reflection.AssemblyCopyrightAttribute))
-                {
-                    AssemblyCopyrightAttribute aca = (AssemblyCopyrightAttribute)o;
-                    copyright =  aca.Copyright;
-                }
-            }
-            //MessageBox.Show(this, Application.ProductName + " v" + Application.ProductVersion + copyright + Application.CompanyName + " Nathan LAAN 2015", "About");
             AboutForm aboutForm = new AboutForm();
             aboutForm.ShowDialog(this);
         }
