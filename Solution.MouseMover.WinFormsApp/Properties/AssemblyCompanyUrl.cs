@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Solution.MouseMover.WinFormsApp
+namespace MouseMover.WindowsApp
 {
 
     [AttributeUsage(AttributeTargets.Assembly)]

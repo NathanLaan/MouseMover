@@ -8,7 +8,7 @@
     <ProjectGuid>{DA080F11-C759-4670-A991-4CDB3532E3AE}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Solution.MouseMover.WinFormsApp</RootNamespace>
+    <RootNamespace>MouseMover.WindowsApp</RootNamespace>
     <AssemblyName>MouseMover</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>

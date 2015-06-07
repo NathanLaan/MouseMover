@@ -1,4 +1,4 @@
-﻿namespace Solution.MouseMover.WinFormsApp
+﻿namespace MouseMover.WindowsApp
 {
   partial class ApplicationForm
   {

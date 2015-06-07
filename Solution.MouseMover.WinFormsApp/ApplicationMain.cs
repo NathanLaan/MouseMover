@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace Solution.MouseMover.WinFormsApp
+namespace MouseMover.WindowsApp
 {
     static class ApplicationMain
     {

@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using System.Reflection;
 using Microsoft.Win32;
 
-namespace Solution.MouseMover.WinFormsApp
+namespace MouseMover.WindowsApp
 {
     public partial class ApplicationForm : Form
     {

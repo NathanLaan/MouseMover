@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
 
-namespace Solution.MouseMover.WinFormsApp
+namespace MouseMover.WindowsApp
 {
     internal sealed unsafe class MouseMoverEngine
     {

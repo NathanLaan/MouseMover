@@ -4,9 +4,9 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Reflection;
 using System.Windows.Forms;
-using Solution.MouseMover.WinFormsApp.Properties;
+using MouseMover.WindowsApp.Properties;
 
-namespace Solution.MouseMover.WinFormsApp
+namespace MouseMover.WindowsApp
 {
     partial class AboutForm : Form
     {
