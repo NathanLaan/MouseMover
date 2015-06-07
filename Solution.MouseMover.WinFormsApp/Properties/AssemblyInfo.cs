@@ -7,7 +7,7 @@ using MouseMover.WindowsApp;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("MouseMover")]
-[assembly: AssemblyDescription("MouseMover simulates mouse movement to prevent your screen saver.")]
+[assembly: AssemblyDescription("MouseMover simulates mouse movement to prevent your screen saver from activating.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Nathan Laan")]
 [assembly: AssemblyProduct("MouseMover")]
