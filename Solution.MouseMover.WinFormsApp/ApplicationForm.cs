@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Reflection;
 using Microsoft.Win32;
 
 namespace Solution.MouseMover.WinFormsApp
@@ -184,9 +185,24 @@ namespace Solution.MouseMover.WinFormsApp
             #endregion ANIMATION
         }
 
+        private const string COPYRIGHT = " \u00A9 ";
+
         private void mnuHelpAbout_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(this, Application.ProductName + " v" + Application.ProductVersion, "About");
+            string copyright = "";
+            Assembly asm = Assembly.GetExecutingAssembly();
+            object[] obj = asm.GetCustomAttributes(false);
+            foreach (object o in obj)
+            {
+                if (o.GetType() == typeof(System.Reflection.AssemblyCopyrightAttribute))
+                {
+                    AssemblyCopyrightAttribute aca = (AssemblyCopyrightAttribute)o;
+                    copyright =  aca.Copyright;
+                }
+            }
+            //MessageBox.Show(this, Application.ProductName + " v" + Application.ProductVersion + copyright + Application.CompanyName + " Nathan LAAN 2015", "About");
+            AboutForm aboutForm = new AboutForm();
+            aboutForm.ShowDialog(this);
         }
 
         private void chkWindowsStartup_CheckedChanged(object sender, EventArgs e)

@@ -128,7 +128,8 @@
         // mnuFileMinimize
         // 
         this.mnuFileMinimize.Name = "mnuFileMinimize";
-        this.mnuFileMinimize.Size = new System.Drawing.Size(204, 22);
+        this.mnuFileMinimize.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.M)));
+        this.mnuFileMinimize.Size = new System.Drawing.Size(249, 22);
         this.mnuFileMinimize.Text = "Minimize to System Tray";
         this.mnuFileMinimize.Click += new System.EventHandler(this.mnuFileMinimize_Click);
         // 
@@ -156,7 +157,9 @@
         // mnuHelpAbout
         // 
         this.mnuHelpAbout.Name = "mnuHelpAbout";
-        this.mnuHelpAbout.Size = new System.Drawing.Size(107, 22);
+        this.mnuHelpAbout.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift)
+                    | System.Windows.Forms.Keys.A)));
+        this.mnuHelpAbout.Size = new System.Drawing.Size(181, 22);
         this.mnuHelpAbout.Text = "&About";
         this.mnuHelpAbout.Click += new System.EventHandler(this.mnuHelpAbout_Click);
         // 

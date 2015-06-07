@@ -1,18 +1,20 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using Solution.MouseMover.WinFormsApp;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("MouseMover")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("MouseMover simulates mouse movement to prevent your screen saver.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("http://nathanlaan.com")]
+[assembly: AssemblyCompany("Nathan Laan")]
 [assembly: AssemblyProduct("MouseMover")]
-[assembly: AssemblyCopyright("Copyright © Nathan Laan 2006-2011")]
+[assembly: AssemblyCopyright("Copyright \u00A9 2006-2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
+[assembly: AssemblyCompanyUrl("http://laan.software/mousemover")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 
